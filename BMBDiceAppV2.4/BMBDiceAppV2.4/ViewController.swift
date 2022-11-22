@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         
     func rollDice()
     {
-        print("We rolling")
+        print("Dice rolled")
             
         let rolledNumber = Int.random(in: 1...20)
         let imageName = "d\(rolledNumber)"
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         diceImageView.image = UIImage(named: imageName)
         if(rolledNumber == 20)
         {
-            criticalLabel.text = "Critical Success"
+            criticalLabel.text = "You did da thing"
             
         }
         let pathToSound = Bundle.main.path(forResource: "rolldice", ofType: "mp3")!
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
             
         if(rolledNumber == 20)
         {
-            criticalLabel.text = "Critical Success"
+            criticalLabel.text = "You did da thing"
             let url = URL(fileURLWithPath: successSound)
             do
             {
@@ -52,13 +52,13 @@ class ViewController: UIViewController {
             }
             catch
             {
-                print("error babe")
+                print("bad")
             }
                 
         }
         else if(rolledNumber == 1)
         {
-            criticalLabel.text = "Critical Miss"
+            criticalLabel.text = "Failure"
             let url = URL(fileURLWithPath: failSound)
             do
             {
@@ -67,7 +67,7 @@ class ViewController: UIViewController {
             }
             catch
             {
-                print("error babe")
+                print("bad")
             }
         }
         else
@@ -81,7 +81,7 @@ class ViewController: UIViewController {
             }
             catch
             {
-                print("error babe")
+                print("bad")
             }
                 
         }
